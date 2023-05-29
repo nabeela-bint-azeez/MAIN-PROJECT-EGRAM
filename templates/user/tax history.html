@@ -1,0 +1,26 @@
+{% extends 'uindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+</form>
+<table width="200" border="1" class="table table-striped">
+  <tr>
+    <th scope="col">tax type </th>
+    <th scope="col">amount</th>
+    <th scope="col">year</th>
+    <th scope="col">date</th>
+  </tr>
+  {% for i in val %}
+
+  <tr>
+    <td>{{i['type']}}</td>
+    <td>{{i['amount']}}</td>
+    <td>{{i['year']}}</td>
+    <td>{{i['date']}}</td>
+  </tr>
+  {% endfor %}
+
+</table>
+</body>
+{% endblock %}

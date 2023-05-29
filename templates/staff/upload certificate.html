@@ -1,0 +1,18 @@
+{% extends 'sindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="" enctype="multipart/form-data">
+  <table width="200" border="1" class="table table-striped">
+
+     <tr>
+            <td></td>
+      <td><input type="file" name="file" required/></td>
+    </tr>
+    <tr>
+      <th scope="row"><input type="submit" name="Submit" value="upload" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

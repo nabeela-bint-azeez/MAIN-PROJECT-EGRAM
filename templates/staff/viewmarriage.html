@@ -1,0 +1,138 @@
+{% extends 'sindex.html' %}
+{% block body %}
+
+<body>
+<form action="marriage1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="415" height="150" border="1" class="table table-striped">
+    <tr>
+      <th scope="row">date of marriage </th>
+      <td>{{val['marriage_date']}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">place of marriage </th>
+      <td><p align="justify">local area: {{val['localarea']}}
+
+      </p>
+        <p align="justify">village : {{val['village']}}
+
+        </p>
+      <p align="justify">taluk :{{val['taluk']}}
+
+      </p>
+      <p align="justify">district :{{val['district']}}
+
+      </p></td>
+
+    </tr>
+  </table>
+  <p>Details of parties to the marriage </p>
+  <table width="788" height="409" border="1" class="table table-striped">
+    <tr>
+      <th width="387" scope="col">details</th>
+      <th width="231" scope="col">husband</th>
+      <th width="150" scope="col">wife</th>
+    </tr>
+    <tr>
+      <td>full name </td>
+      <td>{{val['husband_name']}}</td>
+      <td>{{val['wife_name']}}</td>
+    </tr>
+    <tr>
+      <td>nationality</td>
+      <td>{{val['nationality1']}}</td>
+      <td>{{val['nationality2']}}</td>
+    </tr>
+    <tr>
+      <td>age</td>
+      <td>{{val['age1']}}</td>
+      <td>{{val['age2']}}</td>
+    </tr>
+    <tr>
+      <td>date of birth </td>
+      <td>{{val['dob1']}}</td>
+      <td>{{val['dob2']}}</td>
+    </tr>
+    <tr>
+      <td>occupation</td>
+      <td>{{val['occupation1']}}</td>
+      <td>{{val['occupation2']}}</td>
+    </tr>
+    <tr>
+      <td>permanent address </td>
+      <td>{{val['permenant_address1']}}</td>
+      <td>{{val['permenant_address2']}}</td>
+    </tr>
+    <tr>
+      <td>present address </td>
+      <td>{{val['present_address1']}}</td>
+      <td>{{val['present_address2']}}</td>
+
+    </tr>
+    <tr>
+      <td>previous marital status </td>
+      <td>{{val['marital_status1']}}</td>
+      <td>{{val['marital_status2']}}</td>
+
+    </tr>
+    <tr>
+      <td>whether any spouse is living </td>
+      <td>{{val['spouse_no1']}}</td>
+      <td>{{val['spouse_no2']}}</td>
+    </tr>
+    <tr>
+      <td>signature</td>
+      <td>{{val['signature1']}}</td>
+      <td>{{val['signature2']}}</td>
+    </tr>
+    <tr>
+      <td>photo</td>
+      <td><img src="../static/image/{{val['photo1']}}" height="100px" width="50px"> </td>
+      <td><img src="../static/image/{{val['photo2']}}" height="100px" width="50px"></td>
+    </tr>
+    <tr>
+      <td>name of father </td>
+      <td>{{val['father_name1']}}</td>
+      <td>{{val['father_name2']}}</td>
+    </tr>
+    <tr>
+      <td>name of mother </td>
+      <td>{{val['mother_name1']}}</td>
+      <td>{{val['mother_name2']}}</td>
+    </tr>
+  </table>
+  <p>witness details</p>
+  <table width="684" height="166" border="1" class="table table-striped">
+    <tr>
+      <th scope="col">details</th>
+      <th scope="col">witness 1</th>
+      <th scope="col">witness 2 </th>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>{{val['witness1']}}</td>
+      <td>{{val['witness2']}}</td>
+    </tr>
+    <tr>
+      <td>address</td>
+      <td>{{val['address1']}}</td>
+      <td>{{val['address2']}}</td>
+    </tr>
+    <tr>
+      <td>signature</td>
+      <td>{{val['witness_signature1']}}</td>
+      <td>{{val['witness_signature2']}}</td>
+    </tr>
+    <tr>
+      <td><a href="verifydoc?id={{val['user_id']}}&sid={{val['service_id']}}">view certificates</a></td>
+    </tr>
+  </table>
+  <tr>
+      <td colspan="2">{% if val['status']=="pending" %}<a href="acceptapplicationrequest?id={{val['request_id']}}" class="btn btn-success">Accept</a>   <a href="rejectapplicationrequest?id={{val['request_id']}}" class="btn btn-success">Reject</a>
+      {% elif val['status']=="accepted" %} Accepted {% else %} Rejected {% endif %}</td>
+    </tr>
+
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}

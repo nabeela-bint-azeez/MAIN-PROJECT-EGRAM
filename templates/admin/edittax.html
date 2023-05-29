@@ -1,0 +1,39 @@
+{% extends 'aindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" action="updatetax" method="post">
+  <table width="416" border="1" class="table table-striped">
+    <!--<tr>-->
+      <!--<th width="132" scope="row">user</th>-->
+      <!--<td width="274"><label>-->
+       <!--<select name="textfield"value="{{val['name']}}">-->
+         <!--{% for i in v %}-->
+         <!--<option value="{{i['lid']}}">-->
+           <!--{{i['name']}}-->
+         <!--</option>-->
+         <!--{% endfor %}-->
+       <!--</select>-->
+      <!--</label></td>-->
+    <!--</tr>-->
+    <tr>
+      <th scope="row">tax type </th>
+      <td><input type="text" name="textfield22"value="{{val['type']}}" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">amount</th>
+      <td><input type="text" name="textfield23" value="{{val['amount']}}" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">date</th>
+      <td><input type="date" name="textfield2"value="{{val['date']}}" required /></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="update" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

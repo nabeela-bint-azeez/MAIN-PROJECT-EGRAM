@@ -1,0 +1,47 @@
+{% extends 'aindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="updatestaff1">
+  <table width="284" border="1" class="table table-striped">
+    <tr>
+      <th width="68" scope="row">Staff name </th>
+      <td width="206"><label>
+        <input type="text" name="textfield" value="{{val['staff_name']}}" required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Address</th>
+      <td><input type="text" name="textfield2" value="{{val['address']}}" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><input type="text" name="textfield3" value="{{val['place']}}" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Mobile</th>
+      <td><input type="text" name="textfield4"  value="{{val['mobile']}}" required pattern="[0-9]{10}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">gender</th>
+      <td><input name="radiobutton" type="radio" value="male" {% if val['gender']=="male" %} checked {% endif %}/>
+        male
+        <input name="radiobutton" type="radio" value="female" {% if val['gender']=="female" %} checked {% endif %} />
+        female
+        <input name="radiobutton" type="radio" value="other"  {% if val['gender']=="other" %} checked {% endif %}/>
+        other </td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><input type="text" name="textfield6"  value="{{val['email']}}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/></td>
+    </tr>
+
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="add" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

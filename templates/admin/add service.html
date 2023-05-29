@@ -1,0 +1,29 @@
+{% extends 'aindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addservice1">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="row">Service name </th>
+      <td><label>
+        <input type="text" name="textfield" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Amount</th>
+      <td><input type="number" name="textfield2" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">Description</th>
+      <td><input type="text" name="textfield3" required/></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="add" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

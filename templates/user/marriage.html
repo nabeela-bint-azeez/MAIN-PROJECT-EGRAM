@@ -1,0 +1,175 @@
+{% extends 'uindex.html' %}
+{% block body %}
+
+<body>
+<form action="marriage1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <p>&nbsp;</p>
+  <table width="555" border="1" class="table table-striped">
+
+    <tr>
+      <td width="266">Local Area</td>
+      <td width="273"><label>
+        <input type="text" name="lc" required pattern="[A-Z a-z.]{3,25}">
+      </label></td>
+    </tr>
+
+
+  <tr>
+      <td width="266">Date of Marriage </td>
+      <td width="273"><label>
+        <input type="date" name="textfield2" required >
+      </label></td>
+    </tr>
+    <tr>
+      <td>Place of Marriage </td>
+      <td><label>
+        <input type="text" name="textfield3" required pattern="[A-Z a-z.]{3,25}">
+      </label></td>
+    </tr>
+  
+    <tr>
+      <td>village</td>
+      <td><label>
+        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}">
+      </label></td>
+    </tr>
+    <tr>
+      <td>Taluk</td>
+      <td><label>
+        <input type="text" name="textfield4" required pattern="[A-Z a-z.]{3,25}">
+      </label></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><label>
+        <input type="text" name="textfield5" required pattern="[A-Z a-z.]{3,25}">
+      </label></td>
+
+    </tr>
+    
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p><b>Details of parties to the marriage </b></p>
+  <table width="788" height="409" border="1" class="table table-striped">
+    <tr>
+      <th width="387" scope="col">details</th>
+      <th width="231" scope="col">husband</th>
+      <th width="150" scope="col">wife</th>
+    </tr>
+    <tr>
+      <td>full name </td>
+      <td><input type="text" name="textfield6" required pattern="[A-Z a-z.]{3,25}"/></td>
+      <td><input type="text" name="textfield62" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td>nationality</td>
+      <td><input type="text" name="textfield63" required pattern="[A-Z a-z.]{3,25}"/></td>
+      <td><input type="text" name="textfield64" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td>age</td>
+      <td><input type="text" name="textfield65" required/></td>
+      <td><input type="text" name="textfield66" required/></td>
+    </tr>
+    <tr>
+      <td>date of birth </td>
+      <td><input type="date" name="textfield67" required/></td>
+      <td><input type="date" name="textfield68" required/></td>
+    </tr>
+    <tr>
+      <td>occupation</td>
+      <td><input type="text" name="textfield69" required /></td>
+      <td><input type="text" name="textfield610" required/></td>
+    </tr>
+    <tr>
+      <td>permanent address </td>
+      <td><input type="text" name="textfield611" required/></td>
+      <td><input type="text" name="textfield612" required/></td>
+    </tr>
+    <tr>
+      <td>present address </td>
+      <td><input type="text" name="textfield613" required/></td>
+      <td><input type="text" name="textfield614" required/></td>
+    </tr>
+    <tr>
+      <td>previous marital status </td>
+      <td><select name="select">
+        <option value="Married">Married</option>
+            <option value="Unmarried">Unmarried</option>
+            <option value="Widower">Widower</option>
+            <option value="Widow">Widow</option>
+            <option value="Divorced">Divorced</option>
+      </select></td>
+      <td><select name="select2">
+        <option value="Married">Married</option>
+            <option value="Unmarried">Unmarried</option>
+            <option value="Widower">Widower</option>
+            <option value="Widow">Widow</option>
+            <option value="Divorced">Divorced</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>whether any spouse is living </td>
+      <td><input name="radiobutton" type="radio" value="yes" checked/>
+      yes 
+        <input name="radiobutton" type="radio" value="no" />
+        no</td>
+      <td><input name="radiobutton1" type="radio" value="yes" checked/>
+yes
+  <input name="radiobutton1" type="radio" value="no" />
+no </td>
+    </tr>
+    <tr>
+      <td>signature</td>
+      <td><input type="file" name="file" accept="image/*" required/></td>
+      <td><input type="file" name="file2" accept="image/*" required/></td>
+    </tr>
+    <tr>
+      <td>photo</td>
+      <td><input type="file" name="file00" accept="image/*" required/></td>
+      <td><input type="file" name="file01" accept="image/*" required/></td>
+    </tr>
+    <tr>
+      <td>name of father </td>
+      <td><input type="text" name="textfield6132" required pattern="[A-Z a-z.]{3,25}"/></td>
+      <td><input type="text" name="textfield6134" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td>name of mother </td>
+      <td><input type="text" name="textfield6133" required pattern="[A-Z a-z.]{3,25}"/></td>
+      <td><input type="text" name="textfield6135" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+  </table>
+  <p>witness details</p>
+  <table width="684" height="166" border="1" class="table table-striped">
+    <tr>
+      <th scope="col">details</th>
+      <th scope="col">witness 1</th>
+      <th scope="col">witness 2 </th>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td><input type="text" name="textfield61332" required pattern="[A-Z a-z.]{3,25}"/></td>
+      <td><input type="text" name="textfield61333" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td>address</td>
+      <td><input type="text" name="textfield61334" required/></td>
+      <td><input type="text" name="textfield61335" required/></td>
+    </tr>
+    <tr>
+      <td>signature</td>
+      <td><input type="file" name="file3" accept="image/*"  required/></td>
+      <td><input type="file" name="file32" accept="image/*" required/></td>
+    </tr>
+  </table>
+  <p>
+    <input type="submit" name="Submit" value="Submit" />
+</p>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}

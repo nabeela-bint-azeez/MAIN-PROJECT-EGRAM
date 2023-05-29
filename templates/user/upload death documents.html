@@ -1,0 +1,30 @@
+{% extends 'uindex.html' %}
+{% block body %}
+
+<body>
+<form action="/insert_document" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="367" border="1" class="table table-striped">
+    <tr>
+      <th scope="row">document type </th>
+      <td><select name="select" required>
+         <option value="birth">birth certificate/SSLC</option>
+          <option value="Adhaar">Adhaar card</option>
+          <option value="Residential">Residential proof</option>
+          <option value="ration">ration card</option>
+          <option value="Medical">Medical certification of cause of death</option>
+          <option value="Applicant">Applicant ID card</option>
+
+      </select></td>
+    </tr>
+    <tr>
+      <th scope="row">document</th>
+      <td><input type="file" name="file"  required/></td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td> <input type="submit" name="Submit2" value="upload" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

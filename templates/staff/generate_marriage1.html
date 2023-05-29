@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style>
+    body {
+        height: 842px;
+        width: 595px;
+        /* to centre page on screen*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+	th{
+	text-align:left;
+    </style>
+
+  <script>
+var dt = new Date();
+document.getElementById('date-time').innerHTML=dt;
+</script>
+
+   <script>
+        function printDiv() {
+            var divContents = document.getElementById("GFG").innerHTML;
+            var a = window.open('', '', 'height=500, width=500');
+            a.document.write('<html>');
+            a.document.write('<body > <h1> <br>');
+            a.document.write(divContents);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
+    </script>
+
+</head>
+
+<body>
+<div id="GFG">
+<form id="form1" name="form1" method="post" action="">
+ <center> 
+   <p><img src="../static/logo.png" width="166" height="84" /></p>
+   <div></div>
+   <div>
+    <B> <p>GOVERNMENT OF KERALA</p>
+     <p>DEPARTMENT OF PANCHAYAT </p></B>
+   </div>
+   <div>
+     <p>Name of Local Government issuing certificate : Kuttippuram gram panchayat </p>
+    </div>
+   <B>
+   <div> CERTIFICATE OF MARRIAGE</div>
+   </b>
+   <div>[ Issued under rule 11 (1) of&nbsp; the Kerala Registration of Marriages (Common) Rules,&nbsp; 2008 ]<br />
+   </div>
+   <div></div>
+   
+  </center>
+   <div>
+     <p align="left">This is to certify that the following information has been taken from the original record of marriage(common) which is the register for (local area/localbody) Kuttippuram grm panchayat of Taluk Tirur ofDistrict Malappuram of State Kerala.
+     <p>&nbsp;</p>
+  </div>
+   <table width="455" border="0">
+     <tr>
+       <th width="214" scope="row">1.Date of Marriage</th>
+       <td width="231">  {{ val['marriage_date'] }}&nbsp;</td>
+     </tr>
+     <tr>
+       <th scope="row">2,Place of Marriage</th>
+       <td>  {{ val['localarea'] }}&nbsp;</td>
+     </tr>
+     
+  </table>
+   <div>
+     <p><strong>3.&nbsp; Details of&nbsp; Parties to&nbsp;the Marriage&nbsp; (as on&nbsp;the date&nbsp;of&nbsp; marriage)</strong></p>
+     <table width="590" height="317" border="1">
+       <tr>
+         <th width="262" scope="col">Details  </th>
+         <th width="158" scope="col">Husband</th>
+         <th width="148" scope="col">Wife</th>
+       </tr>
+       <tr>
+         <th scope="row">Name&nbsp;in&nbsp;full&nbsp;(Capital&nbsp;Letters)</th>
+         <td> {{ val['husband_name'] }}</td>
+      <td> {{ val['wife_name'] }}</td>
+       </tr>
+       <tr>
+         <th scope="row">Nationality </th>
+        <td>{{ val['nationality1'] }}</td>
+      <td>{{ val['nationality2'] }}</td>
+       </tr>
+       <tr>
+         <th scope="row">Age</th>
+        <td>{{ val['age1'] }}</td>
+      <td>{{ val['age2'] }}</td>
+       </tr>
+       <tr>
+         <th scope="row">Date&nbsp;of&nbsp;birth</th>
+         <td>{{ val['dob1'] }}</td>
+      <td>{{ val['dob2'] }}</td>
+       </tr>
+       <tr>
+         <th scope="row">Occupation  </th>
+       <td>{{ val['occupation1'] }}</td>
+      <td>{{ val['occupation2'] }}</td>
+       </tr>
+       <tr>
+         <th scope="row">Permenent address </th>
+         <td>{{ val['permenant_address1'] }}</td>
+      <td>{{ val['permenant_address2'] }}</td>
+       </tr>
+       <tr>
+         <th scope="row">Name&nbsp;of&nbsp;father</th>
+         <td>{{ val['father_name1'] }}</td>
+      <td>{{ val['father_name2'] }}</td>
+       </tr>
+       <tr>
+         <th scope="row">Name&nbsp;of&nbsp;mother</th>
+          <td>{{ val['mother_name1'] }}</td>
+      <td>{{ val['mother_name2'] }}</td>
+       </tr>
+       <tr>
+         <th scope="row">Photographs</th>
+          <td><img src="static/image/{{ val['photo1'] }}" height="100" width="100"></td>
+      <td><img src="static/image/{{ val['photo2'] }}" height="100" width="100"></td>
+       </tr>
+     </table>
+   </div>
+   <div>
+   <br />
+   <table width="200" border="0">
+     <tr>
+       <th scope="row"><div>Registration&nbsp;No.</div>
+           <div> </div></th>
+       <td>00{{ val['marriage_id'] }}&nbsp;</td>
+     </tr>
+     <tr>
+       <th scope="row">Date</th>
+       <td><span id='date-time'></span>
+
+         &nbsp;</td>
+     </tr>
+     <tr>
+       <th scope="row">Local&nbsp;Registrar&nbsp;</th>
+       <td> Local&nbsp;Registrar&nbsp;of&nbsp;Marriages&nbsp;(Common)&nbsp;,kuttippuram Grama Panchayat</td>
+     </tr>
+   </table>
+   <div>
+     <p>This certificate is computer generated and&nbsp; does not require any Seal/Signature in original
+       The Govt. vide&nbsp; G.O.(Ms) No.202/2012/LSGD dated 25/07/2012 has approved this certificate as a&nbsp; valid document for all official&nbsp; purposes&nbsp;
+     Authenticity of this certificate can be verified&nbsp;at www.cr.kuttippuramgp.gov.in. 
+       Software developed and supported by&nbsp; Information Kerala Mission.
+       Certificate printed before the last&nbsp; updated date is invalid </p>
+  </div>
+   <p>&nbsp;</p>
+
+     <div>
+
+     <input type="button" value="Print" onclick="printDiv()"></td>
+
+     </div>
+   </center>
+   </div>
+</form>
+</body>
+</html>

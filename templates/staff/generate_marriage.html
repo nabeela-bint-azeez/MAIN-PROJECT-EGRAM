@@ -1,0 +1,182 @@
+{% extends 'sindex.html' %}
+{% block body %}
+
+
+ <script>
+        function printDiv() {
+            var divContents = document.getElementById("GFG").innerHTML;
+            var a = window.open('', '', 'height=500, width=500');
+            a.document.write('<html>');
+            a.document.write('<body > <h1> <br>');
+            a.document.write(divContents);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
+    </script>
+
+
+<div>
+<form action="marriage1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <p>&nbsp;</p>
+     <div align="center" id="GFG">
+  <table width="555" border="0" class="table table-striped">
+
+
+        <tr align="center">
+        <th colspan="2" scope="row"><img src="static/logo.png" alt="ni image" width="166" height="113"></th>
+      </tr>
+
+        <tr align="center">
+        <th colspan="2" scope="row">MARRIAGE CERTIFICATE</th>
+      </tr>
+
+    <tr>
+      <td width="266">Local Area</td>
+      <td width="273"><label>
+        {{ val['localarea'] }}
+      </label></td>
+    </tr>
+
+
+  <tr>
+      <td width="266">Date of Marriage </td>
+      <td width="273"><label>
+          {{ val['marriage_date'] }}
+      </label></td>
+    </tr>
+
+    <tr>
+      <td>village</td>
+      <td><label>
+         {{ val['village'] }}
+      </label></td>
+    </tr>
+    <tr>
+      <td>Taluk</td>
+      <td><label>
+     {{ val['taluk'] }}
+      </label></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><label>
+       {{ val['district'] }}
+      </label></td>
+
+    </tr>
+    
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p><b>Details of parties to the marriage </b></p>
+  <table width="788" height="409" border="1" class="table table-striped">
+    <tr>
+      <th width="387" scope="col">details</th>
+      <th width="231" scope="col">husband</th>
+      <th width="150" scope="col">wife</th>
+    </tr>
+    <tr>
+      <td>full name </td>
+      <td> {{ val['husband_name'] }}</td>
+      <td> {{ val['wife_name'] }}</td>
+    </tr>
+    <tr>
+      <td>nationality</td>
+      <td>{{ val['nationality1'] }}</td>
+      <td>{{ val['nationality2'] }}</td>
+    </tr>
+    <tr>
+      <td>age</td>
+       <td>{{ val['age1'] }}</td>
+      <td>{{ val['age2'] }}</td>
+    </tr>
+    <tr>
+      <td>date of birth </td>
+      <td>{{ val['dob1'] }}</td>
+      <td>{{ val['dob2'] }}</td>
+    </tr>
+    <tr>
+      <td>occupation</td>
+     <td>{{ val['occupation1'] }}</td>
+      <td>{{ val['occupation2'] }}</td>
+    </tr>
+    <tr>
+      <td>permanent address </td>
+       <td>{{ val['permenant_address1'] }}</td>
+      <td>{{ val['permenant_address2'] }}</td>
+    </tr>
+    <tr>
+      <td>present address </td>
+       <td>{{ val['present_address1'] }}</td>
+      <td>{{ val['present_address2'] }}</td>
+    </tr>
+    <tr>
+      <td>previous marital status </td>
+
+      <td>{{ val['marital_status1'] }}</td>
+      <td>{{ val['marital_status2'] }}</td>
+    </tr>
+    <tr>
+      <td>whether any spouse is living </td>
+    <td>{{ val['spouse_no1'] }}</td>
+      <td>{{ val['spouse_no2'] }}</td>
+
+    </tr>
+    <tr>
+      <td>signature</td>
+      <td><img src="static/image/{{ val['signature1'] }}" height="50" width="100"> </td>
+      <td> <img src="static/image/{{ val['signature2'] }}" height="50" width="100"> </td>
+    </tr>
+    <tr>
+      <td>photo</td>
+       <td><img src="static/image/{{ val['photo1'] }}" height="100" width="100"></td>
+      <td><img src="static/image/{{ val['photo2'] }}" height="100" width="100"></td>
+    </tr>
+    <tr>
+      <td>name of father </td>
+     <td>{{ val['father_name1'] }}</td>
+      <td>{{ val['father_name2'] }}</td>
+    </tr>
+    <tr>
+      <td>name of mother </td>
+     <td>{{ val['mother_name1'] }}</td>
+      <td>{{ val['mother_name2'] }}</td>
+    </tr>
+  </table>
+  <p>witness details</p>
+  <table width="684" height="166" border="1" class="table table-striped">
+    <tr>
+      <th scope="col">details</th>
+      <th scope="col">witness 1</th>
+      <th scope="col">witness 2 </th>
+    </tr>
+    <tr>
+      <td>name</td>
+        <td>{{ val['witness1'] }}</td>
+      <td>{{ val['witness2'] }}</td>
+    </tr>
+    <tr>
+      <td>address</td>
+         <td>{{ val['address1'] }}</td>
+      <td>{{ val['address2'] }}</td>
+    </tr>
+    <tr>
+      <td>signature</td>
+          <td><img src="static/image/{{ val['witness_signature1'] }}" height="50" width="100"></td>
+      <td><img src="static/image/{{ val['witness_signature2'] }}" height="50" width="100"></td>
+    </tr>
+        </div>
+    <tr align="center">
+      <td>
+     <input type="button" value="Print" onclick="printDiv()"></td>
+    </tr>
+  </table>
+
+
+</form>
+
+</body>
+{% endblock %}

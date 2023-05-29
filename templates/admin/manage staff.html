@@ -1,0 +1,38 @@
+{% extends 'aindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addstaff#about">
+  <table width="756" height="186" border="1" class="table table-striped">
+    <tr>
+      <th scope="col">Staff name </th>
+      <th scope="col">address</th>
+      <th scope="col">place</th>
+      <th scope="col">mobile</th>
+      <th scope="col">gender</th>
+      <th scope="col">email</th>
+      <th scope="col"><p>&nbsp;</p>      </th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>&nbsp;{{i['staff_name']}}</td>
+      <td>{{i['address']}}</td>
+      <td>&nbsp;{{i['place']}}</td>
+      <td>{{i['mobile']}}&nbsp;</td>
+      <td>&nbsp;{{i['gender']}}</td>
+      <td>&nbsp;{{i['email']}}</td>
+      <td><p><a href="editstaff?id={{i['staff_id']}}#about">edit</a></p>
+      <p><a href="deletestaff?id={{i['lid']}}">delete</a></p></td>
+    </tr>
+    {% endfor %}
+
+    <tr>
+      <td height="48" colspan="7"><label>
+        <input type="submit" name="Submit" value="add"  />
+      </label></td>
+    </tr>
+  </table>
+
+</form>
+</body>
+{% endblock %}

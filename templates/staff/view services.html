@@ -1,0 +1,23 @@
+{% extends 'sindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="756" height="186" border="1" class="table table-striped">
+    <tr>
+      <th scope="col">service name </th>
+      <th scope="col">amount</th>
+      <th scope="col">description</th>
+    </tr>
+    {% for i in data %}
+
+    <tr>
+      <td>&nbsp;{{i['service_name']}}</td>
+      <td>{{i['amount']}}</td>
+      <td>{{i['description']}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

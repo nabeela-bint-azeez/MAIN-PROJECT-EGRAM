@@ -1,0 +1,57 @@
+{% extends 'uindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="birth1" enctype="multipart/form-data">
+  <table width="419" border="1" class="table table-striped">
+    <tr>
+      <th width="240" scope="row"><div align="left">date of birth </div></th>
+      <td width="169"><input type="date" name="textfield" required/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">sex</div></th>
+      <td><input name="radiobutton" type="radio" value="male" checked />
+      male 
+        <input name="radiobutton" type="radio" value="female" />
+female</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of child </div></th>
+      <td><input type="text" name="textfield2" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of father </div></th>
+      <td><input type="text" name="textfield3" required pattern="[A-Z a-z.]{3,25}" /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of mother </div></th>
+      <td><input type="text" name="textfield4" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">permanent address of parents </div></th>
+      <td><input type="text" name="textfield5" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">address of parents at the time of birth </div></th>
+      <td><input type="text" name="textfield6" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">place of birth </div></th>
+      <td><input type="text" name="textfield7" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">informant's name &amp;address </div></th>
+      <td><input type="text" name="textfield8" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+     <tr>
+      <th scope="row">informent's signature</th>
+      <td><input type="file" name="file" accept="image/*" required/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left"></div></th>
+      <td><input type="submit" name="Submit" value="Submit" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

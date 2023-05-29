@@ -1,0 +1,28 @@
+{% extends 'aindex.html' %}
+{% block body %}
+
+<body>
+<table width="357" border="1" class="table table-striped">
+  <tr>
+    <th width="66" scope="row">user</th>
+    <th width="66" scope="row">complaint</th>
+    <td width="66">date</td>
+    <td width="93">&nbsp;reply</td>
+  </tr>
+   {% for i in data %}
+
+    <tr>
+      <td>&nbsp;{{i['name']}}</td>
+      <td>{{i['complaint']}}</td>
+      <td>{{i['date']}}</td>
+      {% if i['reply']=='pending' %}
+      <td><p><a href="reply?id={{i['complaint_id']}}#about">Reply</a></p></td>
+      {% else %}
+      <td>{{i['reply']}}</td>
+      {% endif %}
+
+    </tr>
+    {% endfor %}
+</table>
+</body>
+{% endblock %}

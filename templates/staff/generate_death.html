@@ -1,0 +1,106 @@
+{% extends 'sindex.html' %}
+{% block body %}
+
+ <script>
+        function printDiv() {
+            var divContents = document.getElementById("GFG").innerHTML;
+            var a = window.open('', '', 'height=500, width=500');
+            a.document.write('<html>');
+            a.document.write('<body > <h1> <br>');
+            a.document.write(divContents);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
+    </script>
+
+
+<body>
+<form action="death1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <div align="center" id="GFG">
+
+  <table width="419" border="0" class="table table-striped">
+
+         <tr align="center">
+        <th colspan="2" scope="row"><img src="static/logo.png" alt="ni image" width="166" height="113"></th>
+      </tr>
+
+        <tr align="center">
+        <th colspan="2" scope="row">DEATH CERTIFICATE</th>
+      </tr>
+
+
+    <tr>
+      <th width="240" scope="row"><div align="left">Date of Death </div></th>
+      <td width="169">{{ val['death_date'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">Name of Deceased </div></th>
+      <td>{{ val['name_of_deceased'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">Permanent Address of Deceased </div></th>
+      <td>{{ val['address'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of father/husband</div></th>
+      <td>{{ val['name_of_f/h'] }}</td>
+    </tr>
+    <tr>
+
+
+      <th scope="row"><div align="left">name of mother </div></th>
+      <td>{{ val['name of mother'] }}</td>
+    </tr>
+    <!--<tr>-->
+      <!--<th scope="row"><div align="left"> address of deceased at the time of death </div></th>-->
+      <!--<td><input type="text" name="textfield5" /></td>-->
+    <!--</tr>-->
+    <tr>
+      <th scope="row"><div align="left">sex</div></th>
+      <td>
+          {{ val['sex'] }}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">age of deceased </div></th>
+      <td>{{ val['age'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">place of death </div></th>
+
+      <td><p>
+      {{ val['place_of_death1'] }}
+      </p>      </td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">location of death </div></th>
+      <td>{{ val['place_of_death2'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">informant's name  </div></th>
+      <td>{{ val['informant_name'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">informant's address </div></th>
+      <td>{{ val['informant_address'] }}</td>
+    </tr>
+    <tr>
+
+      <th scope="row"><div align="left">signature of informant </div></th>
+      <td><img src="{{ val['informant_signature'] }}" height="50" width="100"></td>
+    </tr>
+     </div>
+
+
+    <tr align="center">
+      <td>
+     <input type="button" value="Print" onclick="printDiv()"></td>
+    </tr>
+
+  </table>
+
+
+</form>
+</body>
+{% endblock %}

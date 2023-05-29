@@ -1,0 +1,27 @@
+{% extends 'aindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="477" height="229" border="1" class="table table-striped">
+    <tr>
+      <th scope="col">username</th>
+      <th scope="col">service</th>
+      <th scope="col">date</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i['name']}}</td>
+      <td>&nbsp;{{i['service_name']}}</td>
+      <td>&nbsp;{{i['date']}}</td>
+      <td>{% if i['status']=="pending" %}<p><a href="acceptrequest?id={{i['request_id']}}">accept</a></p>
+        <p><a href="rejectrequest?id={{i['request_id']}}">reject</a>{% elif i['status']=="accepted" %}Accepted
+        {% else %} Rejected {% endif %}</p>
+        <p>&nbsp;</p></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'sindex.html' %}
+{% block body %}
+
+<body>
+<form action="death1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="419" border="1" class="table table-striped">
+    <tr>
+      <th width="240" scope="row"><div align="left">date of death </div></th>
+      <td width="169">{{val['death_date']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of deceased </div></th>
+      <td>{{val['name_of_deceased']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">permanent address of deceased </div></th>
+      <td>{{val['address']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of father/husband</div></th>
+      <td>{{val['name_of_f/h']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of mother </div></th>
+      <td>{{val['name of mother']}}</td>
+    </tr>
+    <!--<tr>-->
+      <!--<th scope="row"><div align="left"> address of deceased at the time of death </div></th>-->
+      <!--<td><input type="text" name="textfield5" /></td>-->
+    <!--</tr>-->
+    <tr>
+      <th scope="row"><div align="left">sex</div></th>
+      <td>
+          {{ val['sex'] }}
+
+{#          <input name="radiobutton" type="radio" value="male" {% if val['sex']=="male" %} checked {% endif %}/>#}
+{#male#}
+{#  <input name="radiobutton" type="radio" value="female" {% if val['sex']=="female" %} checked {% endif %}/>#}
+{#female#}
+{#      #}
+
+      </td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">age of deceased </div></th>
+      <td>{{val['age']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">place of death </div></th>
+      <td><p>
+          {{ val['place_of_death1'] }}
+{#        <select name="select">#}
+{#            <option value="hospital" {% if val['place_of_death1']=="hospital" %} selected {% endif %}>hospital</option>#}
+{#            <option value="house" {% if val['place_of_death1']=="house" %} selected {% endif %}>house</option>#}
+{#            <option value="other" {% if val['place_of_death1']=="other" %} selected {% endif %}>other</option>#}
+{##}
+{##}
+{#        </select>#}
+      </p>      </td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">location of death </div></th>
+      <td>{{val['place_of_death2']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">informant's name  </div></th>
+      <td>{{val['informant_name']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">informant's address </div></th>
+      <td>{{val['informant_address']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">signature of informant </div></th>
+      <td><a href="static/image/{{val['informant_signature']}}">download</a> </td>
+    </tr>
+      <tr>
+      <td><a href="verifydoc?id={{val['user_id']}}&sid={{val['service_id']}}">view certificates</a></td>
+    </tr>
+    <tr align="center">
+
+        <th colspan="2" scope="row"> {% if val['status']=="pending" %} <a href="acceptapplicationrequest?id={{val['request_id']}}" class="btn btn-success">Accept</a>       <a href="rejectapplicationrequest?id={{val['request_id']}}" class="btn btn-success">Reject</a>
+        {% elif val['status']=="accepted" %} Accepted {% else %} Rejected {% endif %}</th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

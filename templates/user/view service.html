@@ -1,0 +1,30 @@
+{% extends 'uindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th>#</th>
+      <th>Services</th>
+      <th>Amount</th>
+      <th>Description</th>
+      <th>&nbsp;</th>
+    </tr>
+    {% for i in data %}
+
+    <tr>
+        <td>{{ loop.index }}</td>
+      <td>&nbsp;{{i['service_name']}}</td>
+      <td>{{i['amount']}}</td>
+      <td>{{i['description']}}</td>
+
+      <td><a href="apply?ser={{i['service_name']}}&id={{i['service_id']}}&amtt={{i['amount']}}#about" class="btn btn-primary">Apply</a></td>
+    </tr>
+    {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}

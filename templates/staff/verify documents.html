@@ -1,0 +1,25 @@
+{% extends 'sindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="364" height="208" border="1" class="table table-striped">
+    <tr>
+      <th scope="row">document </th>
+      <td>doc name</td>
+
+
+    </tr>
+    {% for i in v %}
+
+    <tr>
+      <th scope="row">&nbsp;<a href="down/{{i['document']}}">File</a></th>
+      <td>&nbsp;{{i['type']}}</td>
+
+
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

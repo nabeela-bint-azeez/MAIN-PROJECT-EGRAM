@@ -1,0 +1,27 @@
+{% extends 'sindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="upldcertficate">
+  <table width="477" height="229" border="1" class="table table-striped">
+    <tr>
+      <th scope="col">username</th>
+      <th scope="col">service</th>
+      <th scope="col">date</th>
+    </tr>
+    {% for i in data %}
+
+    <tr>
+     <td>{{i['name']}}</td>
+      <td>{{i['service_name']}}</td>
+      <td>{{i['date']}}</td>
+	  <td height="48" colspan="7"><label>
+        <input type="submit" name="Submit" value="upload certificate"  />
+      </label></td>
+    </tr>
+    {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}

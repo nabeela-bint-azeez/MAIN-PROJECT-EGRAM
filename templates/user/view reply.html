@@ -1,0 +1,22 @@
+{% extends 'uindex.html' %}
+{% block body %}
+
+<body>
+<table width="357" border="1" class="table table-striped">
+  <tr>
+    <th width="66" scope="row">date</th>
+    <th width="66" scope="row">complaint</th>
+    <td width="66">reply</td>
+  </tr>
+   {% for i in data %}
+
+    <tr>
+      <td>&nbsp;{{i['date']}}</td>
+      <td>{{i['complaint']}}</td>
+      <td>{{i['reply']}}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+</body>
+{% endblock %}

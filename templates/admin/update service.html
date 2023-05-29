@@ -1,0 +1,29 @@
+{% extends 'aindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addservice#about">
+  <table width="287" border="1" class="table table-striped">
+    <tr>
+      <th width="66" scope="row">service name </th>
+      <td width="44">amount</td>
+      <td width="66">description</td>
+      <td></td>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>&nbsp;{{i['service_name']}}</td>
+      <td>{{i['amount']}}</td>
+      <td>{{i['description']}}</td>
+      <td><p><a href="editservice?id={{i['service_id']}}#about">edit</a></p>
+      <p><a href="deleteservice?id={{i['service_id']}}">delete</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th colspan="4" scope="row"><input type="submit" name="Submit" value="add" /></th>
+    </tr>
+  </table>
+  <label></label>
+</form>
+</body>
+{% endblock %}

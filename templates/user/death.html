@@ -1,0 +1,76 @@
+{% extends 'uindex.html' %}
+{% block body %}
+
+<body>
+<form action="death1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="419" border="1" class="table table-striped">
+    <tr>
+      <th width="240" scope="row"><div align="left">date of death </div></th>
+      <td width="169"><input type="date" name="a" required/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of deceased </div></th>
+      <td><input type="text" name="b" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">permanent address of deceased </div></th>
+      <td><input type="text" name="c" required /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of father/husband</div></th>
+      <td><input type="text" name="d" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of mother </div></th>
+      <td><input type="text" name="e" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <!--<tr>-->
+      <!--<th scope="row"><div align="left"> address of deceased at the time of death </div></th>-->
+      <!--<td><input type="text" name="textfield5" /></td>-->
+    <!--</tr>-->
+    <tr>
+      <th scope="row"><div align="left">sex</div></th>
+      <td><input name="radiobutton" type="radio" value="male" checked/>
+male
+  <input name="radiobutton" type="radio" value="female" />
+female</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">age of deceased </div></th>
+      <td><input type="text" name="f" required/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">place of death </div></th>
+      <td><p>
+        <select name="select">
+            <option value="hospital">hospital</option>
+            <option value="house">house</option>
+            <option value="other">other</option>
+
+
+        </select>
+      </p>      </td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">location of death </div></th>
+      <td><input type="text" name="g" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">informant's name  </div></th>
+      <td><input type="text" name="h" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">informant's address </div></th>
+      <td><input type="text" name="i" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">signature of informant </div></th>
+      <td><input type="file" name="file" accept="image/*" required/></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><div align="left"></div>        <input type="submit" name="Submit" value="Submit" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

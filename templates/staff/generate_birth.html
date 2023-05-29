@@ -1,0 +1,80 @@
+{% extends 'sindex.html' %}
+{% block body %}
+
+ <script>
+        function printDiv() {
+            var divContents = document.getElementById("GFG").innerHTML;
+            var a = window.open('', '', 'height=500, width=500');
+            a.document.write('<html>');
+            a.document.write('<body > <h1> <br>');
+            a.document.write(divContents);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
+    </script>
+
+<body>
+<form id="form1" name="form1" method="post" action="birth1" enctype="multipart/form-data">
+
+  <div align="center" id="GFG">
+    <table width="419" border="0" class="table table-striped">
+        <tr align="center">
+        <th colspan="2" scope="row"><img src="static/logo.png" alt="ni image" width="166" height="113"></th>
+      </tr>
+
+        <tr align="center">
+        <th colspan="2" scope="row">BIRTH CERTIFICATE</th>
+      </tr>
+
+      <tr>
+        <th width="240" scope="row"><div align="left">Date of Birth </div></th>
+        <td width="169">{{ val['dob'] }}</td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="left">Sex</div></th>
+        <td>
+          {{ val['sex'] }}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="left">Name of Child</div></th>
+        <td>{{ val['child_name'] }}</td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="left">Name of Father</div></th>
+        <td>{{ val['father_name'] }}</td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="left">Name of Mother</div></th>
+        <td>{{ val['mother_name'] }}</td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="left">Permanent Address</div></th>
+        <td>{{ val['address'] }}</td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="left">Address at the Time of Birth </div></th>
+        <td>{{ val['address2'] }}</td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="left">Place of Birth</div></th>
+        <td>{{ val['birth_place'] }}</td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="left">Informant's name &amp;address </div></th>
+        <td>{{ val['informant_name'] }}</td>
+      </tr>
+      <tr>
+        <th scope="row">informent's signature</th>
+        <td><img src="static/image/{{ val['informant_signaturae'] }}" height="37" width="129"></td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="left"></div></th>
+        <td> <input type="button" value="Print" onclick="printDiv()"></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+{% endblock %}

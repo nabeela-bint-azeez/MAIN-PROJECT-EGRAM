@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style>
+    body {
+        height: 842px;
+        width: 595px;
+        /* to centre page on screen*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+	th{
+	text-align:left;
+    </style>
+
+
+     <script>
+        function printDiv() {
+            var divContents = document.getElementById("GFG").innerHTML;
+            var a = window.open('', '', 'height=500, width=500');
+            a.document.write('<html>');
+            a.document.write('<body > <h1> <br>');
+            a.document.write(divContents);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
+    </script>
+
+
+</head>
+
+<body>
+<div id="GFG">
+<form id="form1" name="form1" method="post" action="">
+ <center> 
+   <p><img src="../Downloads/kerala_gov.png" width="166" height="84" /></p>
+   <div>
+     <B>KUTTIPPURAM GRAMA PANCHAYAT</B>
+      <div>Kuttippuram</div>
+	  <div>Naduvattom p.o</div> 
+       <div>kuttippuramgp@gmail.com</div>
+       <div>0494-260 2492 </div>
+	 </div>
+	 <hr>
+	<center><B> OWNERSHIP CERTIFICATE</B></center>
+	 <hr>
+
+</center>
+     
+   <div>
+     <p align="left">Certified that the building bearing No <!--buiding id.--> in ward<!--ward--> is owned by the following person/s as per the Assesment register maintained in Kuttippuram Grama panchayat .</P>
+     <p align="left"><!--owner--> </P>
+     <p align="left">This certificate is issued for<!----> as per request   </P>
+     <p align="left">date of issue: &nbsp;{{ val['d'] }}</P>
+     <p align="left">&nbsp;</P>
+     <p align="left">&nbsp; </P>
+   </div>
+  
+  <div>
+  <p align="left"></div>
+   <center>
+     <div>
+     <p>This certificate is computer generated and&nbsp; does not require any Seal/Signature in original
+       The Govt. vide&nbsp; G.O.(Ms) No.202/2012/LSGD dated 25/07/2012 has approved this certificate as a&nbsp; valid document for all official&nbsp; purposes&nbsp;
+     Authenticity of this certificate can be verified&nbsp;at www.cr.kuttippuramgp.gov.in. 
+       Software developed and supported by&nbsp; Information Kerala Mission.
+       Certificate printed before the last&nbsp; updated date is invalid </p>
+   </div>
+   <p>&nbsp;</p>
+   </center>
+</form>
+    <div>
+
+     <input type="button" value="Print" onclick="printDiv()"></td>
+
+     </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+{% extends 'uregindex.html' %}
+{% block body %}
+
+<body>
+<form action="register" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <p>Registration</p>
+  <table width="345" border="0" class="table table-striped">
+    <tr>
+      <th width="111" scope="row">name</th>
+      <td width="224"><input type="text" name="textfield" required pattern="[a-z A-Z]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">gender</th>
+      <td><input name="radiobutton" type="radio" value="male" checked/>
+        male
+        <input name="radiobutton" type="radio" value="female" />
+        female
+        <input name="radiobutton" type="radio" value="other" />
+        other </td>
+    </tr>
+    <tr>
+      <th scope="row">date of birth </th>
+      <td><input type="date" name="textfield2" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">age</th>
+      <td><input type="text" name="textfield23" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">photo</th>
+      <td><input type="file" name="file" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">signature</th>
+      <td><input type="file" name="file2" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <p>Present address</p>
+  <table width="345" border="0" class="table table-striped">
+    <tr>
+      <th width="111" scope="row">house no </th>
+      <td width="224"><input type="text" name="textfield3" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">house name </th>
+      <td><input type="text" name="textfield222" required pattern="[a-z A-Z]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">locality</th>
+      <td><input type="text" name="textfield22" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">post office </th>
+      <td><input type="text" name="textfield223" required pattern="[a-z A-Z]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">pincode</th>
+      <td><input type="text" name="textfield224" required pattern="[0-9]{6}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">district</th>
+      <td><select name="textfield2242" >
+        <option>Kozhikode</option>
+        <option>kasarkode</option>
+        <option>kannur</option>
+        <option>wayanad</option>
+        <option>malappuram</option>
+        <option>palakkad</option>
+        <option>thrissur</option>
+        <option>ernamkulam</option>
+        <option>idukki</option>
+        <option>kottayam</option>
+        <option>alappuzha</option>
+        <option>pathanamthitta</option>
+        <option>kollam</option>
+        <option>thiruvananthapuram</option>
+        <option></option>
+        <option></option>
+
+      </select></td>
+    </tr>
+    <tr>
+      <th scope="row">taluk</th>
+      <td><input type="text" name="textfield2243" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">village</th>
+      <td><input type="text" name="textfield2244" required /></td>
+    </tr>
+  </table>
+  <p>personal details</p>
+  <table width="351" height="308" border="0" class="table table-striped">
+    <tr>
+      <th width="233" scope="row">father's name</th>
+      <td width="108"><input type="text" name="textfield22422" required pattern="[a-z A-Z]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">mother's name</th>
+      <td><input type="text" name="textfield22423" required pattern="[a-z A-Z]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">marital status </th>
+      <td><select name="textfield22424" >
+      <option value="Married">Married</option>
+            <option value="Unmarried">Unmarried</option>
+            <option value="Widower">Widower</option>
+            <option value="Widow">Widow</option>
+            <option value="Divorced">Divorced</option>
+      </select></td>
+    </tr>
+    <tr>
+      <th scope="row">phone</th>
+      <td><input type="text" name="textfield22425"  pattern="[0-9]{10}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">email address </th>
+      <td><input type="text" name="textfield22426"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">driving licence no. </th>
+      <td><input type="text" name="textfield22427" /></td>
+    </tr>
+    <tr>
+      <th scope="row">passport no. </th>
+      <td><input type="text" name="textfield22428" /></td>
+    </tr>
+    <tr>
+      <th scope="row">sslc reg no. </th>
+      <td><input type="text" name="textfield22429" /></td>
+    </tr>
+    <tr>
+      <th scope="row">ration card no. </th>
+      <td><input type="text" name="textfield224210" /></td>
+    </tr>
+    <tr>
+      <th scope="row">election id </th>
+      <td><input type="text" name="textfield224211" /></td>
+    </tr>
+    <tr>
+      <th scope="row">adhaar no </th>
+      <td><input type="text" name="textfield224212" /></td>
+    </tr>
+     <tr>
+      <th scope="row">username</th>
+      <td><input type="text" name="username" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">password </th>
+      <td><input type="text" name="password" required/></td>
+    </tr>
+  </table>
+  <p>
+    <input type="submit" name="Submit" value="Register" />
+</p>
+  <p>&nbsp; </p>
+</form>
+</body>
+{% endblock %}

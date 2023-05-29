@@ -1,0 +1,32 @@
+{% extends 'aindex.html' %}
+{% block body %}
+
+<body>
+<form  method="post" action="addtax#about">
+<table width="357" border="1" class="table table-striped">
+  <tr>
+    <th width="66" scope="row">user</th>
+    <th width="66" scope="row">tax type </th>
+    <td width="44">amount</td>
+    <td width="66">date</td>
+    <td width="93">&nbsp;</td>
+  </tr>
+    {% for i in data %}
+  <tr>
+
+    <td>{{i['name']}}</td>
+    <td>{{i['type']}}</td>
+    <td>{{i['amount']}}</td>
+    <td>{{i['date']}}</td>
+    <td><p><a href="edittax?id={{i['tax_id']}}#about">edit</a></p>
+        <p><a href="deletetax?id={{i['tax_id']}}">delete</a></p></td>
+  </tr>
+  <tr>
+    {% endfor %}
+
+    <th colspan="5" scope="row"><input type="submit" name="Submit" value="add" /></th>
+  </tr>
+</table>
+</form>
+</body>
+{% endblock %}

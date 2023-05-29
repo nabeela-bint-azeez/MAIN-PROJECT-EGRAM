@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style>
+    body {
+        height: 842px;
+        width: 595px;
+        /* to centre page on screen*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+	th{
+	text-align:left;
+    </style>
+</head>
+
+<body>
+
+<form id="form1" name="form1" method="post" action="">
+ <center> 
+   <p><img src="static/logo.png" width="166" height="84" /></p>
+   <div></div>
+   <div>
+    <B> <p>GOVERNMENT OF KERALA</p>
+     <p>DEPARTMENT OF PANCHAYAT </p></B>
+   </div>
+   <div>
+     <p>Name of Local Government issuing certificate : Kuttippuram gram panchayat </p>
+    </div>
+   <div></div>
+   <B>
+   <div>DEATH CERTIFICATE</div>
+   </b>
+   <div>(Issued Under Section 12)</div>
+   <div></div>
+   <div><p align="left">(Issued under Section 12 of the Registration of Births and Deaths Acts, 1969 and Rule 8 of the Kerala Registration of Births and DeathsRules, 1999)&nbsp;</P></div>
+  </center>
+   <div>
+     <p align="left">This is to certify that the following information has been taken from the original record of death which is the register for (local area/localbody) Kuttippuram grm panchayat of Taluk Tirur ofDistrict Malappuram of State Kerala.
+     <p>&nbsp;</p>
+  </div>
+   <table width="455" border="0">
+     <tr>
+       <th width="214" scope="row">Name </th>
+       <td width="231">{{ val['name_of_deceased'] }}&nbsp;</td>
+     </tr>
+     <tr>
+       <th scope="row">Sex</th>
+       <td>&nbsp; {{ val['sex'] }}</td>
+     </tr>
+     <tr>
+       <th scope="row">Date of Death`</th>
+       <td>&nbsp;{{ val['death_date'] }}</td>
+     </tr>
+     <tr>
+       <th scope="row">Place of Death </th>
+       <td>{{ val['place_of_death1'] }}&nbsp;</td>
+     </tr>
+     <tr>
+       <th scope="row">Name of Mother</th>
+       <td>{{ val['name of mother'] }}&nbsp;</td>
+     </tr>
+     <tr>
+       <th scope="row">Name of Father/Husband </th>
+       <td>&nbsp;{{ val['name_of_f/h'] }}</td>
+     </tr>
+     <tr>
+       <th scope="row">Address of the deceased at the time of&nbsp;birth of the child </th>
+       <td>&nbsp;</td>
+     </tr>
+     <tr>
+       <th scope="row">Permanent address of parents
+         
+        <br /></th>
+       <td>&nbsp;{{ val['address'] }}</td>
+     </tr>
+     <tr>
+       <th scope="row">Registration Number</th>
+       <td>&nbsp;000{{ val['death_id'] }}</td>
+     </tr>
+     <tr>
+       <th scope="row">Date of Issue</th>
+       <td>&nbsp;{{ val['d'] }}</td>
+     </tr>
+     <tr>
+       <th scope="row">Address of the issuing authority</th>
+       <td>Registrar of Births and Deaths, 
+       kuttippuram Gram panchayat</td>
+     </tr>
+  </table>
+   <p>&nbsp;</p>
+   <center><div><b>&ldquo;Ensure Registration of Every birth and death&rdquo;</b></div>
+   <div>
+     <p>This certificate is computer generated and&nbsp; does not require any Seal/Signature in original
+       The Govt. vide&nbsp; G.O.(Ms) No.202/2012/LSGD dated 25/07/2012 has approved this certificate as a&nbsp; valid document for all official&nbsp; purposes&nbsp;
+     Authenticity of this certificate can be verified&nbsp;at www.cr.kuttippuramgp.gov.in. 
+       Software developed and supported by&nbsp; Information Kerala Mission.
+       Certificate printed before the last&nbsp; updated date is invalid </p>
+   </div>
+   <p>&nbsp;</p>
+   </center>
+</form>
+<div>
+
+     <input type="button" value="Print" onclick="printDiv()"></td>
+
+     </div>
+</body>
+</html>

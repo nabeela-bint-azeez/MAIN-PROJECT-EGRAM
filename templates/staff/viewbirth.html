@@ -1,0 +1,56 @@
+{% extends 'sindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="birth1" enctype="multipart/form-data">
+  <table width="419" border="1" class="table table-striped">
+    <tr>
+      <th width="240" scope="row"><div align="left">date of birth </div></th>
+      <td width="169"> {{val['dob']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">sex</div></th>
+      <td> {{val['sex']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of child </div></th>
+      <td> {{val['child_name']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of father </div></th>
+      <td> {{val['father_name']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">name of mother </div></th>
+      <td> {{val['mother_name']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">permanent address of parents </div></th>
+      <td> {{val['address']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">address of parents at the time of birth </div></th>
+      <td> {{val['address2']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">place of birth </div></th>
+      <td> {{val['birth_place']}}</td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">informant's name &amp;address </div></th>
+      <td> {{val['informant_name']}}</td>
+    </tr>
+     <tr>
+      <th scope="row"><div align="left">informent's signature</div></th>
+       <td><a href="../static/image/{{val['informant_signaturae']}}" >{{val['informant_signaturae']}}</a></td>
+    </tr>
+    <tr>
+      <td><a href="verifydoc?id={{val['user_id']}}&sid={{val['service_id']}}">view certificates</a></td>
+    </tr>
+    <tr>
+      <td colspan="2">{% if val['status']=="pending" %}<a href="acceptapplicationrequest?id={{val['request_id']}}" class="btn btn-success">Accept</a>   <a href="rejectapplicationrequest?id={{val['request_id']}}" class="btn btn-success">Reject</a>
+      {% elif val['status']=="accepted" %} Accepted {% else %} Rejected {% endif %}</td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

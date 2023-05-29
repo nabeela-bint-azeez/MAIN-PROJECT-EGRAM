@@ -1,0 +1,61 @@
+{% extends 'sindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="ownership1">
+  <div width="450" height="353" border="0" class="table table-striped">
+
+       <tr align="center">
+        <th colspan="2" scope="row"><img src="static/logo.png" alt="ni image" width="166" height="113"></th>
+      </tr>
+
+        <tr align="center">
+        <th colspan="2" scope="row">OWNERSHIP CERTIFICATE</th>
+      </tr>
+
+    <tr>
+      <th width="95" scope="row">building ID </th>
+      <td width="315">{{ val['building_id'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">local body </th>
+      <td>{{ val['localbody'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">zonal office  </th>
+      <td>{{ val['zonal_office'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">ward/door no. </th>
+      <td>{{ val['ward_doorno'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">owner</th>
+      <td>{{ val['owner'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">date</th>
+      <td>{{ val['date'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">functionality</th>
+      <td>{{ val['functionality'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">category</th>
+      <td>{{ val['category'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">purpose</th>
+      <td>{{ val['purpose'] }}
+      </td>
+    </tr>
+  </div>
+    <tr align="center">
+      <td>
+     <input type="button" value="Print" onclick="printDiv()"></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'uindex.html' %}
+{% block body %}
+
+<body>
+
+
+
+<form id="form1" name="form1" method="post" action="chooseyear1">
+    <table width="756" height="186" border="1" class="table table-striped">
+        <tr><td>Select year</td><td>
+{#            <input type="text" name="textfield" required placeholder="choose year"/>#}
+
+        <select  name="textfield" required>
+            <option>--select---</option>
+            <option>2019</option>
+            <option>2020</option>
+            <option>2021</option>
+            <option>2022</option>
+            <option>2023</option>
+        </select>
+
+        </td></tr>
+         <tr><td><input type="submit" name="Submit" value="submit" /></td></tr>
+    </table>
+</form>
+
+</body>
+{% endblock %}
